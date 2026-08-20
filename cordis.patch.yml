@@ -1,0 +1,5 @@
+# dsh-client-ui-customizer bundle patch: mounts the plugin into a profile layer
+# stack. User overrides ride their profile patch row with the same id.
+- insert:
+    - id: ui-customizer
+      name: '@deepseek-ai/dsh-client-ui-customizer'
