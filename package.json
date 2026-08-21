@@ -1,15 +1,22 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-customizer",
-  "description": "Web UI customizer: replace the logo, hero/brand/input texts, and the background; add a configurable workbench view.",
-  "version": "0.1.0-rc.5",
-  "publishConfig": {
-    "access": "public"
-  },
+  "name": "dsh-ui-customizer",
+  "version": "0.1.0",
+  "description": "Web UI customizer for DeepSeek Harness: replace the logo, hero/brand/input texts, and the background; add a configurable workbench view.",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "webui",
+    "customizer",
+    "theme",
+    "branding"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
-    "directory": "packages/client/ui-customizer"
+    "url": "git+https://github.com/leozongmac/dsh-ui-customizer.git"
   },
+  "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
@@ -22,9 +29,19 @@
       "types": "./lib/types/client/index.d.ts",
       "default": "./lib/client.js"
     },
-    "./src/*": "./src/*",
+    "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/client.js.map",
+    "lib/types/**/*.d.ts",
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -43,18 +60,17 @@
     "bundle": "tsdown",
     "watch": "tsdown --watch"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/react": "~18.3.1"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:^",
-    "@deepseek-ai/dsh-client-locale": "workspace:^",
-    "@deepseek-ai/dsh-client-runtime": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-settings": "workspace:^",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:^",
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.5",
+    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.5",
+    "@deepseek-ai/dsh-client-ui-conversation": "^0.1.0-rc.5",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.5",
+    "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.5",
+    "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.5",
     "react": "^18.2.0"
   }
 }
